@@ -1,73 +1,20 @@
-<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-  <div class="container">
-      <a class="navbar-brand"> <img src="./assets/images/Logo2.jpg" width="220" height="40"/></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-              aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-          <ul class="navbar-nav flex-grow-1">
-              <li class="nav-item">
-              <li>
-                <a href="#">Home</a>
-              </li>
-            </ul>
-      </div>
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand"><img src="./assets/images/Logo.PNG" width="180" height="60"/></a>  
+  <button (click)="isCollapsed = !isCollapsed" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div [collapse]="isCollapsed" class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li routerLinkActive="nav-item active" [routerLinkActiveOptions]="{exact: true}">
+        <a (click)="isCollapsed = !isCollapsed" class="nav-link" routerLink="/">Home</a>
+      </li>
+      <li routerLinkActive="nav-item active">
+        <a (click)="isCollapsed = !isCollapsed" class="nav-link" [routerLink]="['/menu/soup']">Menu</a>
+      </li>
+      <!-- <li routerLinkActive="nav-item active">
+        <a (click)="isCollapsed = !isCollapsed" class="nav-link" routerLink="/contactus">Contact us</a>
+      </li> -->
+    </ul>
   </div>
 </nav>
-<div>
-  <img src="../assets/images/Background4.png" alt="Background" class="img-fluid">
-</div>
-<br/>
-<div class="container">
-  <h1 class="jumbotron-heading center text-center">About Us</h1>
-  <p class="lead text-center">
-      Solanas Wok & Grill is a Chinese and Thai restaurant in the nest of HongKong Bazaar, Sector 57, Gurugram. 
-      Solanas Wok & Grill offers mouth watering delicious food in most competitive prices. Best Dimsums, Thai Curries and many more...
-  </p>
-</div>
-<div class="container">
-      <h1 class="text-center">Menu</h1>
-</div>
-<div class="card text-center">
-  <img src="../assets/images/Veg Hakka Noodles.JPG" alt="Veg Hakka Noodles" class="img-fluid">
-  <div class="card-body">
-      <h5 class="card-title">Veg Hakka Noodles</h5>
-  </div>
-</div>
-<div class="card text-center">
-  <img src="../assets/images/Assorted Veg Basket 12 pcs.JPG" alt="Assorted Veg Basket" class="img-fluid">
-  <div class="card-body">
-      <h5 class="card-title">Assorted Veg Basket</h5>
-  </div>
-</div>
-<div class="card text-center">
-  <img src="../assets/images/Crispy Prawns Thai Herbs.JPG" alt="Crispy Prawns" class="img-fluid">
-  <div class="card-body">
-      <h5 class="card-title">Crispy Prawns</h5>
-  </div>
-</div>
-<div class="card text-center">
-  <img src="../assets/images/Thai Chicken Red Curry.JPG" alt="Thai Chicken Red Curry" class="img-fluid">
-  <div class="card-body">
-      <h5 class="card-title">Thai Chicken Red Curry</h5>
-  </div>
-</div>
-<div class="card text-center">
-  <img src="../assets/images/Non Veg Combo Meal.JPG" alt="Non Veg Combo Meal" class="img-fluid">
-  <div class="card-body">
-      <h5 class="card-title">Non Veg Combo Meal</h5>
-  </div>
-</div>
-<div class="card text-center">
-  <img src="../assets/images/Hot & Sour Soup.JPG" alt="Hot & Sour Soup" class="img-fluid">
-  <div class="card-body">
-      <h5 class="card-title">Hot & Sour Soup</h5>
-  </div>
-</div>
-<div class="card text-center">
-  <img src="../assets/images/Bento Menu.jpg" alt="Veg Hakka Noodles" class="img-fluid">
-  <div class="card-body">
-      <h5 class="card-title">Bento Box</h5>
-  </div>
-</div>
+<router-outlet></router-outlet>

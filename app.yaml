@@ -1,7 +1,11 @@
 runtime: nodejs10
+
 handlers:
-- url: /
+
+- url: /(.*\.(gif|png|PNG|jpg|JPG|eot|svg|woff2|ttf|woff|css|js)(|\.map))$
+  static_files: dist/\1
+  upload: dist/(.*)(|\.map)
+
+- url: /(.*)
   static_files: dist/index.html
-  upload: dist/.*
-- url: /
-  static_dir: dist/
+  upload: dist/index.html
